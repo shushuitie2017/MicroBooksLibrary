@@ -6,18 +6,24 @@ services:
             - "8001:81"
         volumes:
             - .:/code
+        networks:
+          - app-net
     web2:
         build: Service_2/.
         ports:
             - "8002:82"
         volumes:
             - .:/code
+        networks:
+          - app-net
     web3:
         build: Service_3/.
         ports:
             - "8003:83"
         volumes:
             - .:/code
+        networks:
+          - app-net
     frontend:
         build: frontend/.
         environment:
@@ -25,6 +31,11 @@ services:
         volumes:
           - ./:/usr/src/app
         command: sh -c 'cd frontend/app && yarn start'
+        networks:
+          - app-net
         ports:
-          - '8000:3000'
+          - '3000:3000'
         tty: true
+networks:
+  app-net:
+    driver: bridge
