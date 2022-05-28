@@ -1,0 +1,30 @@
+version: '3'
+services:
+    web1:
+        build: Service_1/.
+        ports:
+            - "8001:81"
+        volumes:
+            - .:/code
+    web2:
+        build: Service_2/.
+        ports:
+            - "8002:82"
+        volumes:
+            - .:/code
+    web3:
+        build: Service_3/.
+        ports:
+            - "8003:83"
+        volumes:
+            - .:/code
+    frontend:
+        build: frontend/.
+        environment:
+          - NODE_ENV=development
+        volumes:
+          - ./:/usr/src/app
+        command: sh -c 'cd frontend/app && yarn start'
+        ports:
+          - '8000:3000'
+        tty: true
