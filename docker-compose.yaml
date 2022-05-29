@@ -36,6 +36,17 @@ services:
         ports:
           - '3000:3000'
         tty: true
+    mongodb:
+      image: mongo
+      restart: always
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: mongo
+      ports:
+        - 27017:27017
+      volumes:
+        - ./db:/data/db
+        - ./configdb:/data/configdb
 networks:
   app-net:
     driver: bridge

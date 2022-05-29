@@ -1,0 +1,10 @@
+show databases
+use admin
+show tables
+show tables
+use system.users
+show * from system.users
+show from system.users
+show user from system.users
+select * from system.users
+show tables

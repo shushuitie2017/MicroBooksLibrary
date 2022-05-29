@@ -7,7 +7,7 @@ CORS(
 )
 @app.route("/")
 def index():
-    
+
     return json.dumps({"title": "thanks"})
 
 if __name__ == "__main__":
