@@ -2,7 +2,8 @@
 
 ## 構成概要図
 
-![image](https://user-images.githubusercontent.com/83538851/170863578-064aab89-6abe-44c5-a27b-2e344a9d99f1.png)
+![image](https://user-images.githubusercontent.com/83538851/170863961-93e122ae-369b-466c-b9a6-fb7bed03e031.png)
+
 
 ## 使用API
 
